@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add news</title>
+  <link rel="stylesheet" href="../static/styles.css">
+</head>
+<body>
+{% include "navbar.html" %}
+
+  <main>
+    <form method="post" enctype="multipart/form-data">
+      <div class="title-div">
+        {{ form.hidden_tag() }}
+        {{ form.title(class="form-control border border-black mt-3 w-50") }}
+        {{ form.paragraph(class="form-control border border-black mt-3 w-50") }}
+        {{ form.img(class="form-control border border-black mt-3 w-50") }}
+        {{ form.submit(class="btn btn-warning mt-3 mx-auto")  }}
+      </div>
+      </form>
+  </main>
+
+  <footer>
+
+  </footer>
+</body>
+</html>

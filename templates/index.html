@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block content %}
+<body>
+
+
+  <main>
+    <div class="flex2"><p>User:</p>{{ current_user.username }}</div>
+    {% for product in products %}
+    <section class="featured-article">
+      <article>
+        <h2>{{ product['title'] }}</h2>
+        <div class="news-div">
+          <img src="/static/{{ product['img'] }}" alt="{{ product['title'] }}" width="30%">
+          <p>{{ product['paragraph'] }}</p>
+        </div>
+        <a href="/view_product/{{ product.id }}" class="read-more">Read more</a>
+        {% if current_user.role == "admin" %}
+        <div class="delete-a"><a href="/delete_news/{{ product.id }}" class="delete">Delete</a></div> <br>
+        <div class="edit-a"><a href="/edit/{{ product.id }}">Edit</a></div>
+        {% endif %}
+      </article>
+
+    </section>
+    {% endfor %}
+
+  </main>
+
+
+</body>
+{% endblock %}
